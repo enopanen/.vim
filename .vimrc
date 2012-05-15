@@ -1,23 +1,18 @@
- 
-filetype plugin indent on           " Enable filetype-specific plugins
-
+call pathogen#infect()
 
 syntax on                           " Syntax highlighting
+filetype plugin indent on           " Enable filetype-specific plugins
 
 set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " unicode!
 
-
-
 set history=500
 set undolevels=500
-set visualbell
-
-
 
 set background=dark
-set relativenumber
-"set hidden                        "hide buffers when not displayed
+set number
+"set relativenumber                "relative number line.. a bit annoying
+set hidden                        "hide buffers when not displayed
 set showmatch
 set showcmd
 set hlsearch
@@ -26,7 +21,7 @@ set smartcase                       "this overwrites the ignore case if search p
 
 set backspace=2
 
-set scrolloff=7
+set scrolloff=5
 set softtabstop=4
 set shiftwidth=4
 set expandtab                       "turns tabs into spaces
@@ -39,8 +34,6 @@ set shiftround                      " use multiple of shiftwidth when indenting 
 
 set splitright
 set columns=320
-set splitbelow
-
 
 "Highlight cursorline ONLY in the active window:
 au WinEnter * setlocal cursorline
@@ -50,7 +43,6 @@ au WinLeave * setlocal nocursorline
 "set list
 "set listchars=trail:~,eol:^
 
-
 set ruler
 set cursorline 
 set cuc 
@@ -59,23 +51,17 @@ highlight StatusLine ctermfg=black ctermbg=gray cterm=NONE
 highlight StatusLineNC ctermfg=black ctermbg=yellow cterm=NONE
 
 
-
 " allow freeform selection (i.e. ignoring line endings) in visual block mode
 set virtualedit+=block
-
 
 " Switch on folding between all braces
 set foldenable                            " enable folding
 set foldcolumn=2                          " add a fold column
 set foldmethod=marker                     " detect triple-{ style fold markers
 set foldmarker={,}
-set foldminlines=2
-set foldlevelstart=0                      " start out with everything folded
-set foldlevel=99
+set foldlevelstart=1                      " start out with everything folded
+"set foldlevel=99
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
-
-
-set virtualedit+=block                    " allow freeform selection in visual block mode
 
 
 "skip wrapped lines while moving in command mode
@@ -95,7 +81,6 @@ nnoremap <S-Tab> <<
 nnoremap j gj
 nnoremap k gk
 
-inoremap # X<BS>#                         "no more hash key
 
 set splitright
 set columns=320
@@ -111,14 +96,15 @@ map n nzz
 
 
 
-"i think this is for command mode
 nnoremap ' :
 nnoremap ; <Esc>
+
+map <F10> <Esc>:buffers<CR>:buffer<Space>
+
 
 
 imap kj <Esc>
 imap jk <Esc>
-
 
 
 map <C-h> <C-w>h
