@@ -7,6 +7,32 @@ set title
 set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " unicode!
 
+"new **********************
+
+
+"disables swap and backup files
+set noswapfile
+set nobackup
+
+"setting these in this order does special, watch when you reload and switch modes
+"must be version 7.4 or > for ^ to work.
+set relativenumber                "relative number line.. a bit annoying
+set number
+
+"shows contents of all registers
+nnoremap <F4> :registers<CR>
+
+"yanks to the end of the line
+nnoremap Y y$
+
+set linebreak 
+set showmode
+
+
+"end new *****************
+
+
+
 set history=500
 set undolevels=500
 
@@ -66,14 +92,15 @@ set foldmethod=manual                     " detect triple-{ style fold markers
 set foldlevelstart=1                      " start out with everything folded
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
 
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+"these have been messing up???
+"au BufWinLeave * mkview
+"au BufWinEnter * silent loadview
 
 "skip wrapped lines while moving in command mode
 nnoremap j gj
 nnoremap k gk
 
-map <Esc><Esc> :w!<CR>
+"map <Esc><Esc> :w!<CR>
 
 "enter search matches when jumping
 map N Nzz
@@ -90,7 +117,6 @@ map <Leader>a ggVG
 
 map Q @@                               "Map Q to repeat the last recorded macro 
 
-map <Esc><Esc> :wq<CR>
 
 
 "keep search pattern at the center of the screen.
@@ -115,7 +141,8 @@ noremap L $
 let mapleader = ","
 
 
-set shortmess=atI                   "ignores "Press ENTER or type command to continue" and others
+"set shortmess=atI                   "ignores "Press ENTER or type command to continue" and others
+set shortmess+=I                   "ignores "Press ENTER or type command to continue" and others
 
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
