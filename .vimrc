@@ -1,5 +1,3 @@
-call pathogen#infect()
-
 syntax on                           " Syntax highlighting
 filetype plugin indent on           " Enable filetype-specific plugins
 
