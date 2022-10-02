@@ -6,7 +6,9 @@ set laststatus=2                    " Always show the statusline
 set encoding=utf-8                  " unicode!
 
 "new **********************
-
+set wildmenu
+set incsearch
+packadd! matchit
 
 "disables swap and backup files
 set noswapfile
